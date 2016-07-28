@@ -15,6 +15,12 @@
             "email": "johann_27@hotmail.fr"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/gigib82/Ratchet"
+        }
+    ],
     "require": {
         "php": ">=5.4",
         "symfony/framework-bundle": "~2.3|~3.0",
