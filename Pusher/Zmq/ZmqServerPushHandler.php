@@ -72,7 +72,7 @@ class ZmqServerPushHandler extends AbstractServerPushHandler
         /* @var SocketWrapper $pull */
         $this->consumer = $context->getSocket(\ZMQ::SOCKET_PULL);
 
-        $this->logger->info(sprintf(
+        $this->logger->notice(sprintf(
             'ZMQ transport listening on %s:%s',
             $config['host'],
             $config['port']

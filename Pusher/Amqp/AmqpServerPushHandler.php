@@ -95,7 +95,7 @@ class AmqpServerPushHandler extends AbstractServerPushHandler
                 $this->eventDispatcher->dispatch(Events::PUSHER_FAIL, new PushHandlerEvent($envelop->getBody(), $this));
             }
 
-            $this->logger->info(sprintf(
+            $this->logger->notice(sprintf(
                 'AMQP transport listening on %s:%s',
                 $config['host'],
                 $config['port']

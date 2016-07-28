@@ -118,7 +118,7 @@ class WebSocketServer implements ServerInterface
      */
     public function launch($host, $port, $profile)
     {
-        $this->logger->info('Starting web socket');
+        $this->logger->notice('Starting web socket');
 
         //In order to avoid circular reference
         $this->topicManager->setWampApplication($this->wampApplication);
@@ -137,7 +137,7 @@ class WebSocketServer implements ServerInterface
         foreach ($this->periodicRegistry->getPeriodics() as $periodic) {
             $this->loop->addPeriodicTimer($periodic->getTimeout(), [$periodic, 'tick']);
 
-            $this->logger->info(sprintf(
+            $this->logger->notice(sprintf(
                 'Register periodic callback %s, executed each %s seconds',
                 $periodic instanceof ProxyInterface ? get_parent_class($periodic) : get_class($periodic),
                 $periodic->getTimeout()
@@ -180,7 +180,7 @@ class WebSocketServer implements ServerInterface
         $event = new ServerEvent($this->loop, $server);
         $this->eventDispatcher->dispatch(Events::SERVER_LAUNCHED, $event);
 
-        $this->logger->info(sprintf(
+        $this->logger->notice(sprintf(
             'Launching %s on %s PID: %s',
             $this->getName(),
             $host . ':' . $port,
