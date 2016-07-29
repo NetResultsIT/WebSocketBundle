@@ -106,7 +106,10 @@ abstract class AbstractPusher implements PusherInterface
      */
     public function push($data, $routeName, Array $routeParameters = array(), Array $context = [])
     {
-        $channel = $this->router->generate($routeName, $routeParameters);
+        $channel = null !== $routeName
+            ? $this->router->generate($routeName, $routeParameters)
+            : null
+        ;
         $message = new Message($channel, $data);
 
         return $this->doPush($this->serializer->serialize($message), $context);

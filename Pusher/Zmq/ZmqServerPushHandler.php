@@ -39,7 +39,7 @@ class ZmqServerPushHandler extends AbstractServerPushHandler
     protected $eventDispatcher;
 
     /**
-     * @param PusherInterface                $pusher
+     * @param PusherInterface          $pusher
      * @param WampRouter               $router
      * @param MessageSerializer        $serializer
      * @param EventDispatcherInterface $eventDispatcher
@@ -85,13 +85,14 @@ class ZmqServerPushHandler extends AbstractServerPushHandler
             try {
                 /** @var MessageInterface $message */
                 $message = $this->serializer->deserialize($data);
-                $request = $this->router->match(new Topic($message->getTopic()));
-                $app->onPush($request, $message->getData(), $this->getName());
-
+                if (null !== $message->getTopic()) {
+                    $request = $this->router->match(new Topic($message->getTopic()));
+                    $app->onPush($request, $message->getData(), $this->getName());
+                }
                 $this->eventDispatcher->dispatch(Events::PUSHER_SUCCESS, new PushHandlerEvent($data, $this));
             } catch (\Exception $e) {
                 $this->logger->error(
-                    'AMQP handler failed to ack message', [
+                    'ZMQ handler failed to ack message', [
                         'exception_message' => $e->getMessage(),
                         'file' => $e->getFile(),
                         'line' => $e->getLine(),
