@@ -71,11 +71,11 @@ Let's do it !
 Installation Instructions
 -------------------------
 
-###Step 1: Install via composer
+### Step 1: Install via composer
 
 `composer require gos/web-socket-bundle`
 
-###Step 2: Add to your App Kernel
+### Step 2: Add to your App Kernel
 
 ```php
 <?php
@@ -90,7 +90,7 @@ public function registerBundles()
     );
 }
 ```
-###Step 3: Configure WebSocket Server
+### Step 3: Configure WebSocket Server
 
 Add the following to your app/config.yml
 
@@ -108,9 +108,18 @@ _Note: when connecting on the client, if possible use the same values as here to
 
 The Server Side WebSocket installation is now complete. You should be able to run this from the root of your symfony installation.
 
+For Symfony 2.7 & 2.8
+
 ```command
 php app/console gos:websocket:server
 ```
+
+For Symfony >3.x
+
+```command
+php bin/console gos:websocket:server
+```
+
 
 If everything is successful, you will see something similar to the following:
 

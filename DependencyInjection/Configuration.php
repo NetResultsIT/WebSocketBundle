@@ -154,7 +154,7 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
-                ->booleanNode('ssl')
+                ->scalarNode('ssl')
                     ->defaultValue(false)
                 ->end()
                 ->scalarNode('origin')
@@ -192,6 +192,9 @@ class Configuration implements ConfigurationInterface
                 ->enumNode('protocol')
                     ->defaultValue('tcp')
                     ->values(['tcp', 'ipc', 'inproc', 'pgm', 'epgm'])
+                ->end()
+                ->integerNode('linger')
+                    ->defaultValue(-1)
                 ->end()
             ->end();
 
