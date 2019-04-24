@@ -1,9 +1,9 @@
 {
-    "name": "gigib82/web-socket-bundle",
+    "name": "netresultsit/web-socket-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Web Socket Bundle",
     "keywords": ["Web Socket Bundle", "Websocket", "WAMP", "IO", "Ratchet"],
-    "homepage": "https://github.com/gigib82/WebSocketBundle",
+    "homepage": "https://github.com/NetResultsIT/WebSocketBundle",
     "license": "MIT",
     "authors": [
         {
