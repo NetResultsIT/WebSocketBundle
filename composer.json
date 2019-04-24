@@ -22,7 +22,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/gigib82/Ratchet"
+            "url": "https://github.com/NetResultsIT/Ratchet"
         }
     ],
     "require": {
@@ -32,7 +32,7 @@
         "gos/websocket-client": "~0.1.0",
         "gos/ratchet-stack": "~0.1",
         "gos/pnctl-event-loop-emitter" : "~0.1",
-        "gigib82/ratchet": "dev-master"
+        "netresultsit/ratchet": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8"
