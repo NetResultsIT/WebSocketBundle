@@ -1,5 +1,5 @@
 {
-    "name": "gos/web-socket-bundle",
+    "name": "netresultsit/web-socket-bundle",
     "type": "symfony-bundle",
     "description": "Symfony Web Socket Bundle",
     "keywords": ["Web Socket Bundle", "Websocket", "WAMP", "IO", "Ratchet"],
@@ -13,6 +13,10 @@
         {
             "name": "Johann Saunier",
             "email": "johann_27@hotmail.fr"
+        },
+        {
+            "name": "Filippo Giacche",
+            "email": "giacche@netresults.it"
         }
     ],
     "require": {
